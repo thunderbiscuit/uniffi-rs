@@ -5,7 +5,8 @@ use ext_types_external_crate::{
 };
 use std::sync::Arc;
 use uniffi_one::{
-    UniffiOneEnum, UniffiOneInterface, UniffiOneProcMacroType, UniffiOneTrait, UniffiOneType,
+    // UniffiOneEnum,
+    UniffiOneInterface, UniffiOneProcMacroType, UniffiOneTrait, UniffiOneType,
     UniffiOneUDLTrait,
 };
 use uniffi_sublib::SubLibType;
@@ -15,7 +16,7 @@ use url::Url;
 uniffi::use_remote_type!(custom_types::Url);
 
 pub struct CombinedType {
-    pub uoe: UniffiOneEnum,
+    // pub uoe: UniffiOneEnum,
     pub uot: UniffiOneType,
     pub uots: Vec<UniffiOneType>,
     pub maybe_uot: Option<UniffiOneType>,
@@ -38,7 +39,7 @@ pub struct CombinedType {
 
 fn get_combined_type(existing: Option<CombinedType>) -> CombinedType {
     existing.unwrap_or_else(|| CombinedType {
-        uoe: UniffiOneEnum::One,
+        // uoe: UniffiOneEnum::One,
         uot: UniffiOneType {
             sval: "hello".to_string(),
         },
@@ -156,21 +157,21 @@ fn get_maybe_uniffi_one_types(ts: Vec<Option<UniffiOneType>>) -> Vec<Option<Unif
 }
 
 // An enum
-fn get_uniffi_one_enum(e: UniffiOneEnum) -> UniffiOneEnum {
-    e
-}
+// fn get_uniffi_one_enum(e: UniffiOneEnum) -> UniffiOneEnum {
+//     e
+// }
 
-fn get_uniffi_one_enums(es: Vec<UniffiOneEnum>) -> Vec<UniffiOneEnum> {
-    es
-}
+// fn get_uniffi_one_enums(es: Vec<UniffiOneEnum>) -> Vec<UniffiOneEnum> {
+//     es
+// }
 
-fn get_maybe_uniffi_one_enum(e: Option<UniffiOneEnum>) -> Option<UniffiOneEnum> {
-    e
-}
+// fn get_maybe_uniffi_one_enum(e: Option<UniffiOneEnum>) -> Option<UniffiOneEnum> {
+//     e
+// }
 
-fn get_maybe_uniffi_one_enums(es: Vec<Option<UniffiOneEnum>>) -> Vec<Option<UniffiOneEnum>> {
-    es
-}
+// fn get_maybe_uniffi_one_enums(es: Vec<Option<UniffiOneEnum>>) -> Vec<Option<UniffiOneEnum>> {
+//     es
+// }
 
 fn get_uniffi_one_interface() -> Arc<UniffiOneInterface> {
     Arc::new(UniffiOneInterface::new())
